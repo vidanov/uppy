@@ -23,6 +23,14 @@
   </main>
 
   <link href="uppy.min.css" rel="stylesheet">
+  <script>
+    window.onerror = function(msg) {
+      var h1 = document.createElement('h1')
+      h1.textContent = 'Error: ' + msg
+      h1.style.color = 'red'
+      document.body.appendChild(h1)
+    }
+  </script>
   <script src="bundle.js"></script>
 </body>
 

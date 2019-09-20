@@ -28,32 +28,32 @@ matrix:
         apt: *APT
         hosts: *HOSTS
         sauce_connect: *SAUCE
-    - node_js: 'stable'
-      env: UNIT=true
-      addons:
-        apt: *APT
-    - node_js: 10
-      env: UNIT=true
-      addons:
-        apt: *APT
-    - node_js: 10
-      env: LINT=true
-      addons:
-        apt: *APT
-    - node_js: 10
-      env: BUILD=true
-      addons:
-        apt: *APT
-    - node_js: 10
-      env: COMPANION=true
-      addons:
-        apt: *APT
-    # Build the website when things are merged to master
-    - node_js: 10
-      env: WEBSITE=true
-      if: branch = master AND type = push
-      addons:
-        apt: *APT
+    # - node_js: 'stable'
+    #   env: UNIT=true
+    #   addons:
+    #     apt: *APT
+    # - node_js: 10
+    #   env: UNIT=true
+    #   addons:
+    #     apt: *APT
+    # - node_js: 10
+    #   env: LINT=true
+    #   addons:
+    #     apt: *APT
+    # - node_js: 10
+    #   env: BUILD=true
+    #   addons:
+    #     apt: *APT
+    # - node_js: 10
+    #   env: COMPANION=true
+    #   addons:
+    #     apt: *APT
+    # # Build the website when things are merged to master
+    # - node_js: 10
+    #   env: WEBSITE=true
+    #   if: branch = master AND type = push
+    #   addons:
+    #     apt: *APT
 before_install:
 - nvm install-latest-npm
 install:
