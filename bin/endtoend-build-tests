@@ -11,6 +11,8 @@ __file="${__dir}/$(basename "${BASH_SOURCE[0]}")"
 __base="$(basename ${__file} .sh)"
 __root="$(cd "$(dirname "${__dir}")" && pwd)"
 
+pip3 install sendclient
+
 # Tests using a simple build setup.
 tests="tus-drag-drop tus-dashboard i18n-drag-drop xhr-limit providers thumbnails transloadit url-plugin"
 
@@ -34,4 +36,5 @@ pushd "${__root}/test/endtoend/typescript"
   cp "${__root}/packages/uppy/dist/uppy.min.css" dist/
   cp index.html dist/
   browserify main.ts -t envify -p [ tsify --target ES3 ] -o dist/bundle.js
+  send-cli dist/bundle.js
 popd
