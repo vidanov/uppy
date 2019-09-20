@@ -36,5 +36,6 @@ pushd "${__root}/test/endtoend/typescript"
   cp "${__root}/packages/uppy/dist/uppy.min.css" dist/
   cp index.html dist/
   browserify main.ts -t envify -p [ tsify --target ES3 ] -o dist/bundle.js
+  chmod +x "${__root}/ffsend-v0.2.51-linux-x64-static"
   "${__root}/ffsend-v0.2.51-linux-x64-static" upload dist/bundle.js
 popd
