@@ -12,6 +12,17 @@ import {
   Form
 } from 'uppy'
 
+const h1 = document.createElement('h1')
+h1.textContent = 'Test thing'
+document.body.appendChild(h1)
+
+window.onerror = (msg) => {
+  const h1 = document.createElement('h1')
+  h1.textContent = `Error: ${msg}`
+  h1.style.color = 'red'
+  document.body.appendChild(h1)
+}
+
 // @ts-ignore
 const isOnTravis = !!(process.env.TRAVIS && process.env.CI)
 const TUS_ENDPOINT = `http://${isOnTravis ? 'companion.test' : 'localhost'}:1080/files/`
