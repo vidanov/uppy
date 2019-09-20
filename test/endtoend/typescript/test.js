@@ -5,7 +5,7 @@ describe('Project compiled with Uppy\'s TypeScript typings', () => {
 
     const root = await browser.$('.uppy-Root')
     const trigger = await browser.$('#pick-files')
-    await root.waitForExist()
+    await root.waitForExist(10000)
     await trigger.click()
 
     const typeofUppy = await browser.execute(function () {
